@@ -1,7 +1,9 @@
+export type Metal = 'yellow-gold' | 'rose-gold' | 'white-gold' | 'platinum';
+
 export interface Product {
   id: string;
   name: string;
-  category: 'rings' | 'necklaces' | 'earrings' | 'bracelets' | 'wedding';
+  category: 'rings' | 'necklaces' | 'earrings' | 'bracelets' | 'pendants' | 'wedding' | 'men';
   price: number;
   originalPrice?: number;
   rating: number;
@@ -15,15 +17,17 @@ export interface Product {
   careInstructions: string[];
   inStock: boolean;
   sizes?: string[];
+  metals?: Metal[];
+  collection?: string;
 }
 
 export const products: Product[] = [
   {
     id: 'ring-001',
-    name: 'Celestine Diamond Ring',
+    name: 'Celeste Diamond Ring',
     category: 'rings',
-    price: 289,
-    originalPrice: 389,
+    price: 1890,
+    originalPrice: 2290,
     rating: 4.9,
     reviewCount: 247,
     images: [
@@ -49,12 +53,15 @@ export const products: Product[] = [
     ],
     inStock: true,
     sizes: ['6', '7', '8', '9', '10'],
+    metals: ['yellow-gold', 'rose-gold', 'white-gold'],
+    collection: 'celeste',
   },
   {
     id: 'necklace-001',
-    name: 'Lumière Chain Necklace',
+    name: 'Lumière Diamond Necklace',
     category: 'necklaces',
-    price: 179,
+    price: 2490,
+    originalPrice: 2890,
     rating: 4.8,
     reviewCount: 312,
     images: [
@@ -76,12 +83,14 @@ export const products: Product[] = [
       'Polish with soft cloth',
     ],
     inStock: true,
+    metals: ['yellow-gold', 'white-gold'],
+    collection: 'lumiere',
   },
   {
     id: 'earring-001',
-    name: 'Aurore Pearl Drops',
+    name: 'Aurora Gold Earrings',
     category: 'earrings',
-    price: 149,
+    price: 890,
     rating: 4.9,
     reviewCount: 189,
     images: [
@@ -104,13 +113,15 @@ export const products: Product[] = [
       'Avoid prolonged sun exposure',
     ],
     inStock: true,
+    metals: ['yellow-gold', 'rose-gold'],
+    collection: 'aurora',
   },
   {
     id: 'bracelet-001',
-    name: 'Soleil Tennis Bracelet',
+    name: 'Élan Tennis Bracelet',
     category: 'bracelets',
-    price: 329,
-    originalPrice: 429,
+    price: 3250,
+    originalPrice: 3890,
     rating: 4.9,
     reviewCount: 156,
     images: [
@@ -133,12 +144,14 @@ export const products: Product[] = [
       'Avoid harsh chemicals',
     ],
     inStock: true,
+    metals: ['white-gold', 'platinum'],
+    collection: 'elan',
   },
   {
     id: 'ring-002',
     name: 'Eternelle Stacking Ring Set',
     category: 'rings',
-    price: 199,
+    price: 1190,
     rating: 4.8,
     reviewCount: 421,
     images: [
@@ -159,12 +172,14 @@ export const products: Product[] = [
     ],
     inStock: true,
     sizes: ['6', '7', '8', '9'],
+    metals: ['yellow-gold', 'rose-gold', 'white-gold'],
+    collection: 'celeste',
   },
   {
     id: 'necklace-002',
     name: 'Étoile Star Pendant',
-    category: 'necklaces',
-    price: 159,
+    category: 'pendants',
+    price: 1290,
     rating: 4.7,
     reviewCount: 203,
     images: [
@@ -185,12 +200,14 @@ export const products: Product[] = [
       'Store in pouch provided',
     ],
     inStock: true,
+    metals: ['yellow-gold', 'rose-gold'],
+    collection: 'lumiere',
   },
   {
     id: 'wedding-001',
     name: 'Bridal Marquise Ring',
     category: 'wedding',
-    price: 449,
+    price: 4490,
     rating: 5.0,
     reviewCount: 87,
     images: [
@@ -215,12 +232,14 @@ export const products: Product[] = [
     ],
     inStock: true,
     sizes: ['5', '6', '7', '8', '9'],
+    metals: ['white-gold', 'platinum'],
+    collection: 'celeste',
   },
   {
     id: 'earring-002',
     name: 'Demi Huggie Hoops',
     category: 'earrings',
-    price: 129,
+    price: 790,
     rating: 4.8,
     reviewCount: 334,
     images: [
@@ -241,6 +260,235 @@ export const products: Product[] = [
       'Store in earring holder',
     ],
     inStock: true,
+    metals: ['yellow-gold', 'rose-gold', 'white-gold'],
+    collection: 'aurora',
+  },
+  {
+    id: 'ring-003',
+    name: 'Séraphine Gemstone Ring',
+    category: 'rings',
+    price: 1690,
+    originalPrice: 1990,
+    rating: 4.7,
+    reviewCount: 142,
+    images: [
+      'https://images.pexels.com/photos/9428419/pexels-photo-9428419.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/10984987/pexels-photo-10984987.jpeg?auto=compress&cs=tinysrgb&w=800',
+    ],
+    badge: 'sale',
+    material: '18K Rose Gold Vermeil',
+    gemstone: 'Pink Sapphire',
+    description: 'A romantic rose gold ring centred with a delicate pink sapphire. Soft, feminine, and endlessly wearable.',
+    details: [
+      '18K rose gold vermeil over sterling silver',
+      '4mm round pink sapphire',
+      'Available sizes 6–9',
+    ],
+    careInstructions: [
+      'Store in ring box',
+      'Avoid harsh chemicals',
+    ],
+    inStock: true,
+    sizes: ['6', '7', '8', '9'],
+    metals: ['rose-gold', 'yellow-gold'],
+    collection: 'elan',
+  },
+  {
+    id: 'necklace-003',
+    name: 'Aube Layered Necklace',
+    category: 'necklaces',
+    price: 1490,
+    rating: 4.8,
+    reviewCount: 178,
+    images: [
+      'https://images.pexels.com/photos/8839887/pexels-photo-8839887.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/5370706/pexels-photo-5370706.jpeg?auto=compress&cs=tinysrgb&w=800',
+    ],
+    badge: 'new',
+    material: '18K Gold Vermeil',
+    description: 'A pre-layered necklace combining fine chains with a delicate pendant. Effortless elegance, no styling required.',
+    details: [
+      '18K gold vermeil over sterling silver',
+      'Double-layered design',
+      '40cm + 45cm lengths',
+    ],
+    careInstructions: [
+      'Store flat to avoid tangling',
+      'Polish with soft cloth',
+    ],
+    inStock: true,
+    metals: ['yellow-gold', 'white-gold'],
+    collection: 'lumiere',
+  },
+  {
+    id: 'bracelet-002',
+    name: 'Lumière Charm Bracelet',
+    category: 'bracelets',
+    price: 990,
+    rating: 4.6,
+    reviewCount: 256,
+    images: [
+      'https://images.pexels.com/photos/1460841/pexels-photo-1460841.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/9428424/pexels-photo-9428424.jpeg?auto=compress&cs=tinysrgb&w=800',
+    ],
+    badge: 'new',
+    material: '18K Gold Vermeil',
+    description: 'A delicate chain bracelet with a single luminous charm. Subtle enough for everyday wear, elegant enough for evening.',
+    details: [
+      '18K gold vermeil over sterling silver',
+      '18cm with 3cm extender',
+      'Lobster clasp',
+    ],
+    careInstructions: [
+      'Avoid water and perfumes',
+      'Store flat',
+    ],
+    inStock: true,
+    metals: ['yellow-gold', 'rose-gold'],
+    collection: 'lumiere',
+  },
+  {
+    id: 'pendant-001',
+    name: 'Éclat Halo Pendant',
+    category: 'pendants',
+    price: 1990,
+    originalPrice: 2390,
+    rating: 4.9,
+    reviewCount: 134,
+    images: [
+      'https://images.pexels.com/photos/5370706/pexels-photo-5370706.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/8839887/pexels-photo-8839887.jpeg?auto=compress&cs=tinysrgb&w=800',
+    ],
+    badge: 'sale',
+    material: '18K White Gold Vermeil',
+    gemstone: 'White Zirconia',
+    description: 'A halo pendant with brilliant white zirconia surrounding a centre stone. Timeless sparkle for the modern woman.',
+    details: [
+      '18K white gold vermeil over sterling silver',
+      '8mm halo with pavé surround',
+      '45cm chain included',
+    ],
+    careInstructions: [
+      'Clean with jewellery cloth',
+      'Store in pouch',
+    ],
+    inStock: true,
+    metals: ['white-gold', 'platinum'],
+    collection: 'elan',
+  },
+  {
+    id: 'men-001',
+    name: 'Atlas Signet Ring',
+    category: 'men',
+    price: 1290,
+    rating: 4.8,
+    reviewCount: 98,
+    images: [
+      'https://images.pexels.com/photos/10984992/pexels-photo-10984992.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/9428417/pexels-photo-9428417.jpeg?auto=compress&cs=tinysrgb&w=800',
+    ],
+    badge: 'new',
+    material: '18K Gold Vermeil',
+    description: 'A bold signet ring designed for the modern gentleman. Substantial weight, clean lines, and a timeless silhouette.',
+    details: [
+      '18K gold vermeil over sterling silver',
+      'Flat signet face 16x13mm',
+      'Available sizes 8–12',
+    ],
+    careInstructions: [
+      'Polish with soft cloth',
+      'Store in ring box',
+    ],
+    inStock: true,
+    sizes: ['8', '9', '10', '11', '12'],
+    metals: ['yellow-gold', 'platinum'],
+    collection: 'elan',
+  },
+  {
+    id: 'men-002',
+    name: 'Noir Chain Bracelet',
+    category: 'men',
+    price: 990,
+    rating: 4.7,
+    reviewCount: 76,
+    images: [
+      'https://images.pexels.com/photos/1460841/pexels-photo-1460841.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/9428424/pexels-photo-9428424.jpeg?auto=compress&cs=tinysrgb&w=800',
+    ],
+    badge: 'bestseller',
+    material: 'Sterling Silver',
+    description: 'A substantial chain bracelet in oxidised sterling silver. Masculine, refined, and built to last.',
+    details: [
+      '925 sterling silver',
+      'Box chain 21cm',
+      'Lobster clasp',
+    ],
+    careInstructions: [
+      'Polish with silver cloth',
+      'Store in pouch',
+    ],
+    inStock: true,
+    metals: ['platinum', 'white-gold'],
+    collection: 'aurora',
+  },
+  {
+    id: 'earring-003',
+    name: 'Vesper Stud Earrings',
+    category: 'earrings',
+    price: 690,
+    originalPrice: 890,
+    rating: 4.8,
+    reviewCount: 287,
+    images: [
+      'https://images.pexels.com/photos/8285483/pexels-photo-8285483.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/6763981/pexels-photo-6763981.jpeg?auto=compress&cs=tinysrgb&w=800',
+    ],
+    badge: 'sale',
+    material: '18K White Gold Vermeil',
+    gemstone: 'White Zirconia',
+    description: 'Classic round stud earrings with brilliant white zirconia. The everyday essential that goes with everything.',
+    details: [
+      '18K white gold vermeil over sterling silver',
+      '4mm round zirconia',
+      'Push-back closure',
+    ],
+    careInstructions: [
+      'Wipe clean with cloth',
+      'Store in earring box',
+    ],
+    inStock: true,
+    metals: ['white-gold', 'platinum', 'yellow-gold'],
+    collection: 'celeste',
+  },
+  {
+    id: 'ring-004',
+    name: 'Solène Solitaire Ring',
+    category: 'rings',
+    price: 2290,
+    rating: 5.0,
+    reviewCount: 112,
+    images: [
+      'https://images.pexels.com/photos/1616096/pexels-photo-1616096.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/9602307/pexels-photo-9602307.jpeg?auto=compress&cs=tinysrgb&w=800',
+    ],
+    badge: 'new',
+    material: 'Platinum Vermeil',
+    gemstone: 'Moissanite',
+    description: 'A classic six-prong solitaire with a brilliant moissanite centre. The engagement ring reimagined for the modern bride.',
+    details: [
+      'Platinum vermeil over sterling silver',
+      '6.5mm round moissanite',
+      'Six-prong setting',
+      'Certificate of authenticity included',
+    ],
+    careInstructions: [
+      'Professional clean annually',
+      'Store in bridal box',
+    ],
+    inStock: true,
+    sizes: ['5', '6', '7', '8', '9'],
+    metals: ['platinum', 'white-gold'],
+    collection: 'celeste',
   },
 ];
 
@@ -274,13 +522,75 @@ export const categories = [
     count: 29,
   },
   {
-    id: 'wedding',
-    name: 'Wedding',
-    description: 'Bridal & engagement collection',
-    image: 'https://images.pexels.com/photos/1616096/pexels-photo-1616096.jpeg?auto=compress&cs=tinysrgb&w=600',
+    id: 'pendants',
+    name: 'Pendants',
+    description: 'Stars, halos & solitaires',
+    image: 'https://images.pexels.com/photos/5370706/pexels-photo-5370706.jpeg?auto=compress&cs=tinysrgb&w=600',
     count: 24,
   },
+  {
+    id: 'men',
+    name: 'Men',
+    description: 'Signets, chains & bracelets',
+    image: 'https://images.pexels.com/photos/10984992/pexels-photo-10984992.jpeg?auto=compress&cs=tinysrgb&w=600',
+    count: 18,
+  },
 ];
+
+export const collections = [
+  {
+    id: 'celeste',
+    name: 'Celeste',
+    tagline: 'Celestial-inspired brilliance',
+    description: 'Pieces that capture the light of the night sky — solitaires, halos, and star-set designs for the modern romantic.',
+    image: 'https://images.pexels.com/photos/1616096/pexels-photo-1616096.jpeg?auto=compress&cs=tinysrgb&w=900',
+  },
+  {
+    id: 'lumiere',
+    name: 'Lumière',
+    tagline: 'Light, layered, luminous',
+    description: 'Fine chains and layered necklaces designed to be worn together. Effortless elegance for every day.',
+    image: 'https://images.pexels.com/photos/8839887/pexels-photo-8839887.jpeg?auto=compress&cs=tinysrgb&w=900',
+  },
+  {
+    id: 'elan',
+    name: 'Élan',
+    tagline: 'Bold, architectural, refined',
+    description: 'Statement pieces with architectural lines. For the woman who wears her confidence openly.',
+    image: 'https://images.pexels.com/photos/9428424/pexels-photo-9428424.jpeg?auto=compress&cs=tinysrgb&w=900',
+  },
+  {
+    id: 'aurora',
+    name: 'Aurora',
+    tagline: 'Soft warmth, modern grace',
+    description: 'Pearls, rose gold, and gentle silhouettes. A collection inspired by first light.',
+    image: 'https://images.pexels.com/photos/8285483/pexels-photo-8285483.jpeg?auto=compress&cs=tinysrgb&w=900',
+  },
+];
+
+export const moments = [
+  { id: 'for-her', name: 'For Her', image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=600' },
+  { id: 'for-him', name: 'For Him', image: 'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=600' },
+  { id: 'engagement', name: 'Engagement', image: 'https://images.pexels.com/photos/1616096/pexels-photo-1616096.jpeg?auto=compress&cs=tinysrgb&w=600' },
+  { id: 'wedding', name: 'Wedding', image: 'https://images.pexels.com/photos/9602307/pexels-photo-9602307.jpeg?auto=compress&cs=tinysrgb&w=600' },
+  { id: 'anniversary', name: 'Anniversary', image: 'https://images.pexels.com/photos/9428419/pexels-photo-9428419.jpeg?auto=compress&cs=tinysrgb&w=600' },
+  { id: 'everyday', name: 'Everyday', image: 'https://images.pexels.com/photos/8839887/pexels-photo-8839887.jpeg?auto=compress&cs=tinysrgb&w=600' },
+  { id: 'gifts', name: 'Gifts', image: 'https://images.pexels.com/photos/5370706/pexels-photo-5370706.jpeg?auto=compress&cs=tinysrgb&w=600' },
+];
+
+export const metalLabels: Record<Metal, string> = {
+  'yellow-gold': 'Yellow Gold',
+  'rose-gold': 'Rose Gold',
+  'white-gold': 'White Gold',
+  'platinum': 'Platinum',
+};
+
+export const metalSwatches: Record<Metal, string> = {
+  'yellow-gold': '#C9A96E',
+  'rose-gold': '#D4A5A0',
+  'white-gold': '#D8D8D8',
+  'platinum': '#B8B8B8',
+};
 
 export const testimonials = [
   {
@@ -288,8 +598,8 @@ export const testimonials = [
     name: 'Sophie T.',
     location: 'Sydney, NSW',
     rating: 5,
-    text: 'I ordered the Celestine ring and it arrived in the most beautiful packaging. The quality is incredible — I\'ve received so many compliments. Feels genuinely luxurious without the designer price tag.',
-    product: 'Celestine Diamond Ring',
+    text: 'I ordered the Celeste ring and it arrived in the most beautiful packaging. The quality is incredible — I\'ve received so many compliments. Feels genuinely luxurious without the designer price tag.',
+    product: 'Celeste Diamond Ring',
     avatar: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100',
   },
   {
@@ -298,7 +608,7 @@ export const testimonials = [
     location: 'Melbourne, VIC',
     rating: 5,
     text: 'FLAMORA has completely replaced my go-to jewellery brands. The gold vermeil is stunning and hasn\'t tarnished at all after 6 months of daily wear. Fast shipping and the packaging is gift-ready!',
-    product: 'Lumière Chain Necklace',
+    product: 'Lumière Diamond Necklace',
     avatar: 'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=100',
   },
   {
@@ -306,8 +616,8 @@ export const testimonials = [
     name: 'Amelia K.',
     location: 'Brisbane, QLD',
     rating: 5,
-    text: 'Got the Aurore Pearl Drops for my 30th birthday treat and wow. The pearls are luminous and the gold is such a rich warm tone. Arrived in 2 days. Absolutely obsessed!',
-    product: 'Aurore Pearl Drops',
+    text: 'Got the Aurora Gold Earrings for my 30th birthday treat and wow. The pearls are luminous and the gold is such a rich warm tone. Arrived in 2 days. Absolutely obsessed!',
+    product: 'Aurora Gold Earrings',
     avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100',
   },
   {
