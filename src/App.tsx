@@ -1,6 +1,8 @@
 import { useState, useCallback } from 'react';
 import { AuthProvider, useAuth } from './context/AuthContext';
-import Navbar from './components/Navbar';
+import AnnouncementBar from './components/AnnouncementBar';
+import Header from './components/Header';
+import CategoryNav from './components/CategoryNav';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import CollectionPage from './pages/CollectionPage';
@@ -19,6 +21,8 @@ type Page =
   | 'necklaces'
   | 'earrings'
   | 'bracelets'
+  | 'pendants'
+  | 'men'
   | 'wedding'
   | 'new-arrivals'
   | 'best-sellers'
@@ -37,7 +41,7 @@ interface NavState {
 }
 
 const COLLECTION_PAGES = new Set<Page>([
-  'collections', 'rings', 'necklaces', 'earrings', 'bracelets',
+  'collections', 'rings', 'necklaces', 'earrings', 'bracelets', 'pendants', 'men',
   'wedding', 'new-arrivals', 'best-sellers', 'sale',
 ]);
 
@@ -47,6 +51,7 @@ function AppInner() {
   const [cart, setCart] = useState<Product[]>([]);
   const [wishlist, setWishlist] = useState<string[]>([]);
   const [authRedirect, setAuthRedirect] = useState<string>('home');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleNavigate = useCallback((page: string, params?: Record<string, string>) => {
     /* Cart guard: not logged in → redirect to auth */
@@ -199,11 +204,18 @@ function AppInner() {
 
   return (
     <div className="min-h-screen bg-ivory-100">
-      <Navbar
+      <AnnouncementBar />
+      <Header
         onNavigate={handleNavigate}
         cartCount={cart.length}
         wishlistCount={wishlist.length}
         currentPage={page}
+        onMobileMenuToggle={() => setMobileMenuOpen(true)}
+      />
+      <CategoryNav
+        onNavigate={handleNavigate}
+        mobileOpen={mobileMenuOpen}
+        onMobileClose={() => setMobileMenuOpen(false)}
       />
       {renderPage()}
       <Footer onNavigate={handleNavigate} />

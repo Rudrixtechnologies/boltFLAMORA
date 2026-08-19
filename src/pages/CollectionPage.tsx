@@ -24,7 +24,7 @@ export default function CollectionPage({ onNavigate, onAddToCart, onToggleWishli
   const [activeCategory, setActiveCategory] = useState(initialCategory || 'all');
   const [sortBy, setSortBy] = useState('featured');
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 600]);
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 5000]);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -155,7 +155,7 @@ export default function CollectionPage({ onNavigate, onAddToCart, onToggleWishli
                 <input
                   type="range"
                   min="0"
-                  max="600"
+                  max="5000"
                   value={priceRange[1]}
                   onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value)])}
                   className="w-full accent-gold-400"
@@ -219,7 +219,7 @@ export default function CollectionPage({ onNavigate, onAddToCart, onToggleWishli
           <div className="text-center py-20">
             <p className="text-charcoal-400 text-sm">No products found for the selected filters.</p>
             <button
-              onClick={() => { setActiveCategory('all'); setPriceRange([0, 600]); }}
+              onClick={() => { setActiveCategory('all'); setPriceRange([0, 5000]); }}
               className="mt-4 text-gold-500 text-xs tracking-widest uppercase hover:text-gold-600 transition-colors"
             >
               Clear Filters

@@ -12,14 +12,11 @@ interface ProductPageProps {
   wishlist: string[];
 }
 
-const TABS = ['Description', 'Materials', 'Care', 'Delivery & Returns', 'Size Guide'];
-
 export default function ProductPage({ productId, onNavigate, onAddToCart, onToggleWishlist, wishlist }: ProductPageProps) {
   const product = products.find((p) => p.id === productId) || products[0];
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedSize, setSelectedSize] = useState<string>('');
   const [quantity, setQuantity] = useState(1);
-  const [activeTab, setActiveTab] = useState('Description');
   const [addedAnim, setAddedAnim] = useState(false);
   const [zoomed, setZoomed] = useState(false);
   const [zoomPos, setZoomPos] = useState({ x: 50, y: 50 });
@@ -137,9 +134,6 @@ export default function ProductPage({ productId, onNavigate, onAddToCart, onTogg
       ),
     },
   ];
-
-  void activeTab;
-  void TABS;
 
   return (
     <div className="min-h-screen bg-ivory-100 pt-24 md:pt-28">
